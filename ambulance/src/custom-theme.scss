@@ -1,0 +1,19 @@
+@import "~@angular/material/theming";
+
+@include mat-core();
+
+$ambulance-primary: mat-palette($mat-indigo);
+$ambulance-accent: mat-palette($mat-pink, A200, A100, A400);
+$ambulance-warn: mat-palette($mat-red);
+
+$ambulance-theme: mat-light-theme(
+  (
+    color: (
+      primary: $ambulance-primary,
+      accent: $ambulance-accent,
+      warn: $ambulance-warn,
+    ),
+  )
+);
+
+@include angular-material-theme($ambulance-theme);

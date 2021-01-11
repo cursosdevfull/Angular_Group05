@@ -1,0 +1,10 @@
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
+  min-height: 100vh;
+}
+
+mat-sidenav {
+  width: 280px;
+  background-color: rgb(45, 50, 62);
+}
