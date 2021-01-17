@@ -8,3 +8,15 @@ mat-sidenav {
   width: 280px;
   background-color: rgb(45, 50, 62);
 }
+
+.logo {
+  padding: 0 24px;
+  background-color: rgb(30, 33, 41);
+  color: hsla(0, 0%, 100%, 0.7) !important;
+}
+
+.logo h3 {
+  line-height: 64px;
+  margin: 0;
+  padding: 0;
+}

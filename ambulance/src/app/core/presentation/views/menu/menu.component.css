@@ -1,0 +1,25 @@
+mat-nav-list {
+  width: 95%;
+}
+
+mat-list-item {
+  transition: 0.2s all;
+  border-radius: 0 24px 24px 0;
+}
+
+mat-list-item:hover {
+  background-color: #039be5 !important;
+}
+
+.activeLink {
+  background-color: #039be5 !important;
+}
+
+a,
+a:link,
+a:visited,
+a:active {
+  color: white;
+  font-size: 14px;
+  font-family: muliregular;
+}

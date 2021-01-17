@@ -6,9 +6,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from '@angular/material/menu';
+import { MenuComponent } from './presentation/views/menu/menu.component';
+import { MatListModule } from '@angular/material/list';
+import { PageLoginComponent } from './presentation/pages/page-login/page-login.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [HeaderComponent, MenuComponent, PageLoginComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -16,7 +20,9 @@ import { MatMenuModule } from '@angular/material/menu';
     MatIconModule,
     FlexLayoutModule,
     MatMenuModule,
+    MatListModule,
+    RouterModule,
   ],
-  exports: [HeaderComponent],
+  exports: [HeaderComponent, MenuComponent, PageLoginComponent],
 })
 export class CoreModule {}

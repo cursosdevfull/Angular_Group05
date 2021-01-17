@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:max": "node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng serve",
     "start:mem": "node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng serve --open",
     "build": "ng build",
     "test": "ng test",

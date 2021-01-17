@@ -1,1 +1,16 @@
-<button (click)="listar()">Listar</button>
+<amb-title></amb-title>
+<amb-container-list>
+  <amb-table [metaDataColumns]="metaDataColumns" [data]="data">
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-button color="primary">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-button color="accent">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+  </amb-table>
+</amb-container-list>

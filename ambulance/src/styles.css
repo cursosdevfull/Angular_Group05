@@ -1,4 +1,92 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "muliregular", Roboto, "Helvetica Neue", sans-serif;
+}
+
+@font-face {
+  font-family: "muliregular";
+  src: url("/assets/fonts/muli/muli-webfont.woff2") format("woff2"),
+    url("/assets/fonts/muli/muli-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "mulibold";
+  src: url("/assets/fonts/muli/muli-bold-webfont.woff2") format("woff2"),
+    url("/assets/fonts/muli/muli-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "mulibolditalic";
+  src: url("/assets/fonts/muli/muli-bolditalic-webfont.woff2") format("woff2"),
+    url("/assets/fonts/muli/muli-bolditalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "muliextralight";
+  src: url("/assets/fonts/muli/muli-extralight-webfont.woff2") format("woff2"),
+    url("/assets/fonts/muli/muli-extralight-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "muliextralightitalic";
+  src: url("/assets/fonts/muli/muli-extralightitalic-webfont.woff2")
+      format("woff2"),
+    url("/assets/fonts/muli/muli-extralightitalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "muliregularitalic";
+  src: url("/assets/fonts/muli/muli-italic-webfont.woff2") format("woff2"),
+    url("/assets/fonts/muli/muli-italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "mulilight";
+  src: url("/assets/fonts/muli/muli-light-webfont.woff2") format("woff2"),
+    url("/assets/fonts/muli/muli-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "mulilightitalic";
+  src: url("/assets/fonts/muli/muli-lightitalic-webfont.woff2") format("woff2"),
+    url("/assets/fonts/muli/muli-lightitalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "mulisemibold";
+  src: url("/assets/fonts/muli/muli-semibold-webfont.woff2") format("woff2"),
+    url("/assets/fonts/muli/muli-semibold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "mulisemibolditalic";
+  src: url("/assets/fonts/muli/muli-semi-bolditalic-webfont.woff2")
+      format("woff2"),
+    url("/assets/fonts/muli/muli-semi-bolditalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,12 @@
+mat-card {
+  background-color: white;
+  padding: 20px;
+  position: relative;
+  width: 95%;
+}
+
+.container {
+  padding: 20px 0;
+  height: calc(100vh - 144px);
+  background-color: whitesmoke;
+}
