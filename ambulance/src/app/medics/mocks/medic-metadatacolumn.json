@@ -1,0 +1,10 @@
+[
+  {
+    "field": "id",
+    "title": "ID"
+  },
+  { "field": "name", "title": "Nombre" },
+  { "field": "lastname", "title": "Apellido" },
+  { "field": "cmp", "title": "Colegiatura" },
+  { "field": "dni", "title": "Documento de Identidad" }
+]

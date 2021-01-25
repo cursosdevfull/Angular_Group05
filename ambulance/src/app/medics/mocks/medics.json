@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Carmen",
+    "surname": "Luisa",
+    "lastname": "Alegría",
+    "cmp": "45625",
+    "dni": "78652416",
+    "email": "cluisa@correo.com",
+    "photo": "carmen.jpg",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "name": "Carmen",
+    "surname": "Luisa",
+    "lastname": "Alegría",
+    "cmp": "45625",
+    "dni": "78652416",
+    "email": "cluisa@correo.com",
+    "photo": "carmen.jpg",
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "name": "Carmen",
+    "surname": "Luisa",
+    "lastname": "Alegría",
+    "cmp": "45625",
+    "dni": "78652416",
+    "email": "cluisa@correo.com",
+    "photo": "carmen.jpg",
+    "isActive": true
+  },
+  {
+    "id": 4,
+    "name": "Carmen",
+    "surname": "Luisa",
+    "lastname": "Alegría",
+    "cmp": "45625",
+    "dni": "78652416",
+    "email": "cluisa@correo.com",
+    "photo": "carmen.jpg",
+    "isActive": true
+  },
+  {
+    "id": 5,
+    "name": "Carmen",
+    "surname": "Luisa",
+    "lastname": "Alegría",
+    "cmp": "45625",
+    "dni": "78652416",
+    "email": "cluisa@correo.com",
+    "photo": "carmen.jpg",
+    "isActive": true
+  },
+  {
+    "id": 6,
+    "name": "Carmen",
+    "surname": "Luisa",
+    "lastname": "Alegría",
+    "cmp": "45625",
+    "dni": "78652416",
+    "email": "cluisa@correo.com",
+    "photo": "carmen.jpg",
+    "isActive": true
+  }
+]

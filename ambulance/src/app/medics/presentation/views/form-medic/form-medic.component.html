@@ -1,0 +1,70 @@
+<mat-toolbar fxLayout fxLayoutAlign="space-between center">
+  <h3>{{ title }}</h3>
+  <button mat-icon-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-dialog-content>
+  <form fxLayout="column" [formGroup]="group">
+    <div fxLayout fxLayoutAlign="space-between" fxLayoutGap="10px">
+      <div fxFlex="1 1 33%">
+        <amb-photo></amb-photo>
+      </div>
+      <div fxFlex="1 1 33%">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input type="text" matInput formControlName="name" required />
+          <mat-error>El campo es obligatorio</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Segundo nombre</mat-label>
+          <input type="text" matInput formControlName="surname" required />
+          <mat-error>El campo es obligatorio</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Apellido</mat-label>
+          <input type="text" matInput formControlName="lastname" required />
+          <mat-error>El campo es obligatorio</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxFlex="1 1 33%" fxLayout="column">
+        <mat-form-field appearance="outline">
+          <mat-label>Correo</mat-label>
+          <input type="text" matInput formControlName="email" required />
+          <mat-error *ngIf="group.get('email').hasError('required')"
+            >El campo es obligatorio</mat-error
+          >
+          <mat-error *ngIf="group.get('email').hasError('emailInvalid')"
+            >Debe ser un correo</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>DNI</mat-label>
+          <input type="text" matInput formControlName="dni" required />
+          <mat-error>El campo es obligatorio</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>CMP</mat-label>
+          <input type="text" matInput formControlName="cmp" required />
+          <mat-error>El campo es obligatorio</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div
+      fxLayout
+      fxLayoutAlign="end center"
+      fxLayoutGap="20px"
+      class="container-buttons"
+    >
+      <button mat-button mat-dialog-close color="primary">Cancelar</button>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="save()"
+        [disabled]="group.invalid"
+      >
+        Guardar
+      </button>
+    </div>
+  </form>
+</mat-dialog-content>

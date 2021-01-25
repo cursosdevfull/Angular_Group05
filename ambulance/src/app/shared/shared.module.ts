@@ -10,8 +10,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ContainterListComponent } from './components/containter-list/containter-list.component';
 import { TableComponent } from './components/table/table.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { PhotoComponent } from './components/photo/photo.component';
+import { UploadDirective } from './directives/upload.directive';
 @NgModule({
-  declarations: [TitleComponent, ContainterListComponent, TableComponent],
+  declarations: [TitleComponent, ContainterListComponent, TableComponent, PhotoComponent, UploadDirective],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -19,6 +25,7 @@ import { MatTableModule } from '@angular/material/table';
     MatCardModule,
     FlexLayoutModule,
     MatTableModule,
+    MatDialogModule,
   ],
   exports: [
     MatSidenavModule,
@@ -29,6 +36,12 @@ import { MatTableModule } from '@angular/material/table';
     TitleComponent,
     ContainterListComponent,
     TableComponent,
+    MatTableModule,
+    MatTooltipModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    PhotoComponent,
   ],
 })
 export class SharedModule {}

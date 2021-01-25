@@ -1,5 +1,5 @@
 export interface MedicEntity {
-  id: string;
+  id: string | number;
   name: string;
   surname: string;
   lastname: string;

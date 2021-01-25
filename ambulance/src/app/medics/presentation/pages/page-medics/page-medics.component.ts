@@ -1,74 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { MedicUseCase } from 'src/app/medics/application/medic.usecase';
+import { MedicEntity } from 'src/app/medics/domain/medic.entity';
 import { IMetaDataColumn } from 'src/app/shared/interfaces/metadatacolumn.interface';
-
+import { UtilsService } from 'src/app/shared/services/utils.service';
+import { FormMedicComponent } from '../../views/form-medic/form-medic.component';
+import mocksMedics from '../../../mocks/medics.json';
+import mocksMedicMetaDataColumn from '../../../mocks/medic-metadatacolumn.json';
 @Component({
   selector: 'amb-page-medics',
   templateUrl: './page-medics.component.html',
   styleUrls: ['./page-medics.component.css'],
 })
 export class PageMedicsComponent implements OnInit {
-  metaDataColumns: IMetaDataColumn[] = [
-    {
-      field: 'id',
-      title: 'ID',
-    },
-    { field: 'name', title: 'Nombre' },
-    { field: 'lastname', title: 'Apellido' },
-    { field: 'cmp', title: 'Colegiatura' },
-    { field: 'dni', title: 'Documento de Identidad' },
-  ];
+  metaDataColumns: IMetaDataColumn[] = mocksMedicMetaDataColumn;
+  data: MedicEntity[] = mocksMedics;
 
-  data: any[] = [
-    {
-      id: 1,
-      name: 'Carmen',
-      lastname: 'Alegría',
-      cmp: '45625',
-      dni: '78652416',
-    },
-    {
-      id: 2,
-      name: 'Carmen',
-      lastname: 'Alegría',
-      cmp: '45625',
-      dni: '78652416',
-    },
-    {
-      id: 3,
-      name: 'Carmen',
-      lastname: 'Alegría',
-      cmp: '45625',
-      dni: '78652416',
-    },
-    {
-      id: 4,
-      name: 'Carmen',
-      lastname: 'Alegría',
-      cmp: '45625',
-      dni: '78652416',
-    },
-    {
-      id: 5,
-      name: 'Carmen',
-      lastname: 'Alegría',
-      cmp: '45625',
-      dni: '78652416',
-    },
-    {
-      id: 6,
-      name: 'Carmen',
-      lastname: 'Alegría',
-      cmp: '45625',
-      dni: '78652416',
-    },
-  ];
-
-  constructor(private readonly medicUseCase: MedicUseCase) {}
+  constructor(
+    private readonly medicUseCase: MedicUseCase,
+    private readonly utils: UtilsService
+  ) {}
 
   ngOnInit(): void {}
 
   listar() {
     this.medicUseCase.getAll().subscribe(console.log, console.log);
+  }
+
+  openForm(row: MedicEntity | any = null) {
+    this.utils.openModal(FormMedicComponent, {
+      disableClose: true,
+      panelClass: 'container-modal',
+      data: row,
+    });
   }
 }

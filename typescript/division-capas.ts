@@ -43,7 +43,6 @@ class MedicoCU {
   }
 
   agregarMedico(medico: IMedico): IMedico {
-    console.log(this.repositorio.getCMP());
     return this.repositorio.insertarMedico(medico);
   }
 }

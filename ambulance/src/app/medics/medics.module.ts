@@ -7,10 +7,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { PageMedicsComponent } from './presentation/pages/page-medics/page-medics.component';
 import { MedicsRoutingModule } from './medics-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { FormMedicComponent } from './presentation/views/form-medic/form-medic.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [PageMedicsComponent],
-  imports: [CommonModule, HttpClientModule, MedicsRoutingModule, SharedModule],
+  declarations: [PageMedicsComponent, FormMedicComponent],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    MedicsRoutingModule,
+    SharedModule,
+    ReactiveFormsModule,
+  ],
   providers: [
     MedicUseCase,
     { provide: MedicOperationRepository, useClass: MedicOperation },
