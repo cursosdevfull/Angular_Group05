@@ -1,0 +1,54 @@
+.container {
+  height: 100vh;
+  background: url(/assets/img/background.png);
+}
+
+.avatar {
+  position: relative;
+}
+
+.avatar mat-icon {
+  font-size: 35px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: red;
+}
+
+.avatar img {
+  width: 80px;
+  max-height: 80px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+
+p {
+  font-size: 20px;
+  font-family: muliregular;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+span {
+  font-size: 14px;
+  font-family: muliregular;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.center {
+  padding-top: 20px;
+  text-align: center;
+}
+
+a,
+a:link,
+a:visited,
+a:active {
+  color: #039be5;
+  text-decoration: none;
+  font-family: muliregular;
+  font-size: 14px;
+}
+
+a:hover {
+  text-decoration: underline;
+}

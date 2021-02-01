@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { ConfigService } from 'src/app/config/config.service';
 
 @Component({
-  selector: 'amb-page-login',
-  templateUrl: './page-login.component.html',
-  styleUrls: ['./page-login.component.css'],
+  selector: 'amb-page-lock-screen',
+  templateUrl: './page-lock-screen.component.html',
+  styleUrls: ['./page-lock-screen.component.css'],
 })
-export class PageLoginComponent implements OnInit {
+export class PageLockScreenComponent implements OnInit {
   constructor(
     private readonly configService: ConfigService,
     private readonly router: Router
@@ -26,7 +26,7 @@ export class PageLoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  enter() {
+  unlock() {
     this.router.navigate(['/dashboard']);
   }
 }

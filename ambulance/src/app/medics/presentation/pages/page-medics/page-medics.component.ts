@@ -6,6 +6,7 @@ import { UtilsService } from 'src/app/shared/services/utils.service';
 import { FormMedicComponent } from '../../views/form-medic/form-medic.component';
 import mocksMedics from '../../../mocks/medics.json';
 import mocksMedicMetaDataColumn from '../../../mocks/medic-metadatacolumn.json';
+import { ConfigService } from 'src/app/config/config.service';
 @Component({
   selector: 'amb-page-medics',
   templateUrl: './page-medics.component.html',
@@ -13,17 +14,34 @@ import mocksMedicMetaDataColumn from '../../../mocks/medic-metadatacolumn.json';
 })
 export class PageMedicsComponent implements OnInit {
   metaDataColumns: IMetaDataColumn[] = mocksMedicMetaDataColumn;
-  data: MedicEntity[] = mocksMedics;
+  data: MedicEntity[] = [];
+  totalRecords = 0;
 
   constructor(
     private readonly medicUseCase: MedicUseCase,
-    private readonly utils: UtilsService
-  ) {}
+    private readonly utils: UtilsService,
+    private readonly configService: ConfigService
+  ) {
+    this.configService.config = {
+      layout: {
+        menu: {
+          hidden: false,
+        },
+        header: {
+          hidden: false,
+        },
+      },
+    };
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.list(0);
+  }
 
-  listar() {
-    this.medicUseCase.getAll().subscribe(console.log, console.log);
+  list(page: number) {
+    this.totalRecords = mocksMedics.length;
+    this.data = mocksMedics.slice(page * 4, page * 4 + 4);
+    // this.medicUseCase.getAll().subscribe(console.log, console.log);
   }
 
   openForm(row: MedicEntity | any = null) {
@@ -32,5 +50,9 @@ export class PageMedicsComponent implements OnInit {
       panelClass: 'container-modal',
       data: row,
     });
+  }
+
+  changePage(page: number) {
+    this.list(page);
   }
 }

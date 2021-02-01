@@ -13,6 +13,7 @@ import { CustomValidators } from 'src/app/shared/utils/custom-validators';
 export class FormMedicComponent implements OnInit {
   title: string;
   group: FormGroup | any;
+  photoToShow: string = '';
 
   listFields = [
     { name: 'id', value: 29, validators: [] },
@@ -25,16 +26,6 @@ export class FormMedicComponent implements OnInit {
   }
 
   setForm() {
-    /*  const controls = this.listFields.reduce((accum: any, ctrl: any) => {
-      if (!accum[ctrl.name]) {
-        accum[ctrl.name] = new FormControl(ctrl.value);
-      }
-
-      return accum;
-    }, {});
-
-    this.group = new FormGroup(controls); */
-
     this.group = new FormGroup({
       id: new FormControl(this.data ? this.data.id : null),
       name: new FormControl(
@@ -66,6 +57,16 @@ export class FormMedicComponent implements OnInit {
         Validators.required
       ),
     });
+
+    if (this.data) {
+      this.group.addControl('photo', new FormControl(null));
+      this.photoToShow = this.data.photo;
+    } else {
+      this.group.addControl(
+        'photo',
+        new FormControl(null, Validators.required)
+      );
+    }
   }
 
   save() {

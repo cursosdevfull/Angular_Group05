@@ -1,3 +1,11 @@
 .align-right {
   text-align: right;
 }
+
+.fixed {
+  position: absolute;
+  top: 10px;
+  width: 95%;
+  text-align: right;
+  z-index: 999999;
+}

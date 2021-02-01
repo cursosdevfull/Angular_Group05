@@ -1,8 +1,10 @@
 import {
   Component,
   ContentChildren,
+  EventEmitter,
   Input,
   OnInit,
+  Output,
   QueryList,
   ViewChild,
   ViewEncapsulation,
@@ -23,6 +25,8 @@ import { IMetaDataColumn } from '../../interfaces/metadatacolumn.interface';
 export class TableComponent implements OnInit {
   @Input() data: any[] = [];
   @Input() metaDataColumns: IMetaDataColumn[] = [];
+  @Input() total: number = 0;
+  @Output() onChangePage: EventEmitter<number> = new EventEmitter<number>();
   @ViewChild(MatTable, { static: true }) table: MatTable<any> | undefined;
   @ContentChildren(MatColumnDef, { descendants: true }) columnsDef:
     | QueryList<MatColumnDef>
@@ -34,12 +38,6 @@ export class TableComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    /*     this.metaDataColumns = [
-      { field: 'id', title: 'ID' },
-      { field: 'name', title: 'Nombre' },
-      { field: 'lastname', title: 'Apellido' },
-    ]; */
-
     this.listFields = this.metaDataColumns.map((el) => el.field);
     this.loadData();
   }
@@ -49,16 +47,6 @@ export class TableComponent implements OnInit {
   }
 
   loadData() {
-    /*     const data = [
-      { id: 1, name: 'Alberto', lastname: 'Vega' },
-      { id: 2, name: 'Alberto', lastname: 'Vega' },
-      { id: 3, name: 'Alberto', lastname: 'Vega' },
-      { id: 4, name: 'Alberto', lastname: 'Vega' },
-      { id: 5, name: 'Alberto', lastname: 'Vega' },
-      { id: 6, name: 'Alberto', lastname: 'Vega' },
-      { id: 7, name: 'Alberto', lastname: 'Vega' },
-    ]; */
-
     this.dataSource = new MatTableDataSource<any>(this.data);
   }
 
@@ -68,5 +56,9 @@ export class TableComponent implements OnInit {
     if (this.columnsDef.length) {
       this.listFields.push('actions');
     }
+  }
+
+  handlerPage(evt: any) {
+    this.onChangePage.emit(evt.pageIndex);
   }
 }

@@ -10,6 +10,11 @@ import { CoreModule } from './core/core.module';
 import { IconService } from './shared/services/icon.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { Paginator } from './shared/classes/paginator';
+import { ConfigModule } from './config/config.module';
+import { AMB_Config } from './config/info';
+
 @NgModule({
   declarations: [AppComponent, LoginComponent, ItemComponent],
   imports: [
@@ -19,8 +24,9 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     SharedModule,
     CoreModule,
+    ConfigModule.forRoot(AMB_Config),
   ],
-  providers: [],
+  providers: [{ provide: MatPaginatorIntl, useClass: Paginator }],
   bootstrap: [AppComponent],
 })
 export class AppModule {

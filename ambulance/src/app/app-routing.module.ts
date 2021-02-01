@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { PageLockScreenComponent } from './core/presentation/pages/page-lock-screen/page-lock-screen.component';
 import { PageLoginComponent } from './core/presentation/pages/page-login/page-login.component';
 
 const routes: Routes = [
   {
     path: 'auth',
-    component: PageLoginComponent,
+    children: [
+      { path: '', component: PageLoginComponent },
+      { path: 'lock', component: PageLockScreenComponent },
+    ],
   },
   {
     path: 'dashboard',

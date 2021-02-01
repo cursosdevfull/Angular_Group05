@@ -7,7 +7,7 @@
     "cmp": "45625",
     "dni": "78652416",
     "email": "cluisa@correo.com",
-    "photo": "carmen.jpg",
+    "photo": "avatar.jpg",
     "isActive": true
   },
   {
@@ -18,7 +18,7 @@
     "cmp": "45625",
     "dni": "78652416",
     "email": "cluisa@correo.com",
-    "photo": "carmen.jpg",
+    "photo": "avatar.jpg",
     "isActive": true
   },
   {
@@ -29,7 +29,7 @@
     "cmp": "45625",
     "dni": "78652416",
     "email": "cluisa@correo.com",
-    "photo": "carmen.jpg",
+    "photo": "avatar.jpg",
     "isActive": true
   },
   {
@@ -40,7 +40,7 @@
     "cmp": "45625",
     "dni": "78652416",
     "email": "cluisa@correo.com",
-    "photo": "carmen.jpg",
+    "photo": "avatar.jpg",
     "isActive": true
   },
   {
@@ -51,7 +51,7 @@
     "cmp": "45625",
     "dni": "78652416",
     "email": "cluisa@correo.com",
-    "photo": "carmen.jpg",
+    "photo": "avatar.jpg",
     "isActive": true
   },
   {
@@ -62,7 +62,73 @@
     "cmp": "45625",
     "dni": "78652416",
     "email": "cluisa@correo.com",
-    "photo": "carmen.jpg",
+    "photo": "avatar.jpg",
+    "isActive": true
+  },
+  {
+    "id": 7,
+    "name": "Carmen",
+    "surname": "Luisa",
+    "lastname": "Alegría",
+    "cmp": "45625",
+    "dni": "78652416",
+    "email": "cluisa@correo.com",
+    "photo": "avatar.jpg",
+    "isActive": true
+  },
+  {
+    "id": 8,
+    "name": "Carmen",
+    "surname": "Luisa",
+    "lastname": "Alegría",
+    "cmp": "45625",
+    "dni": "78652416",
+    "email": "cluisa@correo.com",
+    "photo": "avatar.jpg",
+    "isActive": true
+  },
+  {
+    "id": 9,
+    "name": "Carmen",
+    "surname": "Luisa",
+    "lastname": "Alegría",
+    "cmp": "45625",
+    "dni": "78652416",
+    "email": "cluisa@correo.com",
+    "photo": "avatar.jpg",
+    "isActive": true
+  },
+  {
+    "id": 10,
+    "name": "Carmen",
+    "surname": "Luisa",
+    "lastname": "Alegría",
+    "cmp": "45625",
+    "dni": "78652416",
+    "email": "cluisa@correo.com",
+    "photo": "avatar.jpg",
+    "isActive": true
+  },
+  {
+    "id": 11,
+    "name": "Carmen",
+    "surname": "Luisa",
+    "lastname": "Alegría",
+    "cmp": "45625",
+    "dni": "78652416",
+    "email": "cluisa@correo.com",
+    "photo": "avatar.jpg",
+    "isActive": true
+  },
+  {
+    "id": 12,
+    "name": "Carmen",
+    "surname": "Luisa",
+    "lastname": "Alegría",
+    "cmp": "45625",
+    "dni": "78652416",
+    "email": "cluisa@correo.com",
+    "photo": "avatar.jpg",
     "isActive": true
   }
 ]

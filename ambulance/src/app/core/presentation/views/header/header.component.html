@@ -5,11 +5,11 @@
     <mat-icon>keyboard_arrow_down</mat-icon>
   </button>
   <mat-menu #menuVert="matMenu">
-    <button mat-menu-item>
+    <button mat-menu-item (click)="lock()">
       <mat-icon>lock</mat-icon>
       <span>Bloquear la pantalla</span>
     </button>
-    <button mat-menu-item>
+    <button mat-menu-item (click)="logout()">
       <mat-icon>exit_to_app</mat-icon>
       <span>Cerrar sesión</span>
     </button>

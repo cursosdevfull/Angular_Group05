@@ -1,5 +1,5 @@
 <mat-sidenav-container>
-  <mat-sidenav opened="true" mode="side">
+  <mat-sidenav opened="true" mode="side" *ngIf="!config.layout.menu.hidden">
     <div class="logo" fxLayout fxLayoutGap="20px" fxLayoutAlign="start center">
       <mat-icon svgIcon="logo"></mat-icon>
       <h3>Sistema de historias</h3>
@@ -7,7 +7,7 @@
     <amb-menu></amb-menu>
   </mat-sidenav>
   <mat-sidenav-content>
-    <amb-header></amb-header>
+    <amb-header *ngIf="!config.layout.header.hidden"></amb-header>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

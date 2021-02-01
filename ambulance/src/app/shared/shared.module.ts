@@ -16,8 +16,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { PhotoComponent } from './components/photo/photo.component';
 import { UploadDirective } from './directives/upload.directive';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { WebcamModule } from 'ngx-webcam';
 @NgModule({
-  declarations: [TitleComponent, ContainterListComponent, TableComponent, PhotoComponent, UploadDirective],
+  declarations: [
+    TitleComponent,
+    ContainterListComponent,
+    TableComponent,
+    PhotoComponent,
+    UploadDirective,
+  ],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -26,6 +35,9 @@ import { UploadDirective } from './directives/upload.directive';
     FlexLayoutModule,
     MatTableModule,
     MatDialogModule,
+    MatSlideToggleModule,
+    MatPaginatorModule,
+    WebcamModule,
   ],
   exports: [
     MatSidenavModule,
@@ -41,6 +53,7 @@ import { UploadDirective } from './directives/upload.directive';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    MatPaginatorModule,
     PhotoComponent,
   ],
 })

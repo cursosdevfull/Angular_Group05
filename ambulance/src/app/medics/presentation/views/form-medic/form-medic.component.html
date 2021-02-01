@@ -8,7 +8,10 @@
   <form fxLayout="column" [formGroup]="group">
     <div fxLayout fxLayoutAlign="space-between" fxLayoutGap="10px">
       <div fxFlex="1 1 33%">
-        <amb-photo></amb-photo>
+        <amb-photo
+          formControlName="photo"
+          [photoByDefault]="photoToShow"
+        ></amb-photo>
       </div>
       <div fxFlex="1 1 33%">
         <mat-form-field appearance="outline">

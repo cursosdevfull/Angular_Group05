@@ -1,0 +1,39 @@
+.container {
+  height: 100vh;
+  background: url(/assets/img/background.png);
+}
+
+.presentation {
+  padding: 150px;
+}
+
+.presentation mat-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.presentation h2 {
+  font-size: 42px;
+  color: whitesmoke;
+}
+
+.login {
+  background-color: white;
+}
+
+.login form {
+  width: 100%;
+}
+
+.login h3 {
+  color: rgba(0, 0, 0, 0.87);
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: -0.1px !important;
+  font-size: 21px;
+  font-weight: normal;
+}
+
+.login .credenciales {
+  width: 80%;
+}

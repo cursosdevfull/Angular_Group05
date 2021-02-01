@@ -10,9 +10,18 @@ import { MenuComponent } from './presentation/views/menu/menu.component';
 import { MatListModule } from '@angular/material/list';
 import { PageLoginComponent } from './presentation/pages/page-login/page-login.component';
 import { RouterModule } from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { PageLockScreenComponent } from './presentation/pages/page-lock-screen/page-lock-screen.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
-  declarations: [HeaderComponent, MenuComponent, PageLoginComponent],
+  declarations: [
+    HeaderComponent,
+    MenuComponent,
+    PageLoginComponent,
+    PageLockScreenComponent,
+  ],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -21,6 +30,9 @@ import { RouterModule } from '@angular/router';
     FlexLayoutModule,
     MatMenuModule,
     MatListModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatInputModule,
     RouterModule,
   ],
   exports: [HeaderComponent, MenuComponent, PageLoginComponent],
