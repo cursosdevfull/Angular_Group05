@@ -7,5 +7,5 @@ export abstract class MedicOperationRepository {
   abstract delete(id: string): Observable<MedicEntity>;
   abstract getAll(): Observable<MedicEntity[]>;
   abstract getOne(id: string): Observable<MedicEntity>;
-  abstract getByPage(page: number): Observable<MedicEntity[]>;
+  abstract getByPage(page: number): Observable<MedicEntity | MedicEntity[]>;
 }

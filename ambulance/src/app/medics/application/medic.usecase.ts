@@ -27,7 +27,7 @@ export class MedicUseCase {
     return this.medicRepository.getOne(id);
   }
 
-  getByPage(page: number): Observable<MedicEntity[]> {
+  getByPage(page: number): Observable<MedicEntity | MedicEntity[]> {
     return this.medicRepository.getByPage(page);
   }
 }

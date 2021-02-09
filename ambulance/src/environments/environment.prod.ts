@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  pathAPI: 'https://api-cursoangular.cursos-dev.com',
+  pageSize: 15,
 };

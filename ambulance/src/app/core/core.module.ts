@@ -14,6 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { PageLockScreenComponent } from './presentation/pages/page-lock-screen/page-lock-screen.component';
 import { MatCardModule } from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { MatCardModule } from '@angular/material/card';
     MatCardModule,
     MatInputModule,
     RouterModule,
+    ReactiveFormsModule,
   ],
   exports: [HeaderComponent, MenuComponent, PageLoginComponent],
 })

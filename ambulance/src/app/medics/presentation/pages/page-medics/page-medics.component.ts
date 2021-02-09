@@ -7,6 +7,7 @@ import { FormMedicComponent } from '../../views/form-medic/form-medic.component'
 import mocksMedics from '../../../mocks/medics.json';
 import mocksMedicMetaDataColumn from '../../../mocks/medic-metadatacolumn.json';
 import { ConfigService } from 'src/app/config/config.service';
+import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'amb-page-medics',
   templateUrl: './page-medics.component.html',
@@ -39,16 +40,28 @@ export class PageMedicsComponent implements OnInit {
   }
 
   list(page: number) {
+    // this.medicUseCase.getByPage(page).subscribe(console.log);
+
     this.totalRecords = mocksMedics.length;
     this.data = mocksMedics.slice(page * 4, page * 4 + 4);
-    // this.medicUseCase.getAll().subscribe(console.log, console.log);
+    this.medicUseCase.getAll().subscribe(console.log, console.log);
   }
 
   openForm(row: MedicEntity | any = null) {
-    this.utils.openModal(FormMedicComponent, {
+    const ref: MatDialogRef<any> = this.utils.openModal(FormMedicComponent, {
       disableClose: true,
       panelClass: 'container-modal',
       data: row,
+    });
+
+    ref.afterClosed().subscribe((response) => {
+      if (!response) {
+        return;
+      }
+
+      if (!response.id) {
+        this.medicUseCase.insert(response).subscribe(console.log);
+      }
     });
   }
 

@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MedicEntity } from 'src/app/medics/domain/medic.entity';
 import { CustomValidators } from 'src/app/shared/utils/custom-validators';
 
@@ -20,7 +20,10 @@ export class FormMedicComponent implements OnInit {
     { name: 'name', value: 'sergio', validators: [] },
   ];
 
-  constructor(@Inject(MAT_DIALOG_DATA) private data: MedicEntity | any) {
+  constructor(
+    @Inject(MAT_DIALOG_DATA) private data: MedicEntity | any,
+    private readonly reference: MatDialogRef<FormMedicComponent>
+  ) {
     this.title = data ? 'Edición' : 'Nuevo';
     this.setForm();
   }
@@ -64,14 +67,15 @@ export class FormMedicComponent implements OnInit {
     } else {
       this.group.addControl(
         'photo',
-        new FormControl(null, Validators.required)
+        new FormControl(null /* , Validators.required */)
       );
     }
   }
 
   save() {
     if (this.group.valid) {
-      console.log('el formulario es válido');
+      const medic = this.group.value;
+      this.reference.close(medic);
     } else {
       console.log('formulario no válido');
     }
