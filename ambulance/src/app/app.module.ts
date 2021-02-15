@@ -17,8 +17,7 @@ import { AMB_Config } from './config/info';
 import { AbstractStorage } from './shared/services/abstract-storage';
 import { StorageService } from './shared/services/storage.service';
 import { TokenInterceptor } from './shared/services/token.interceptor';
-import { MedicOperationRepository } from './medics/application/medic-operation.repository';
-import { MedicOperation } from './medics/infraestructure/medic.operation';
+import { AuthenticationGuard } from './shared/guards/authentication.guard';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, ItemComponent],
@@ -32,6 +31,7 @@ import { MedicOperation } from './medics/infraestructure/medic.operation';
     ConfigModule.forRoot(AMB_Config),
   ],
   providers: [
+    AuthenticationGuard,
     { provide: MatPaginatorIntl, useClass: Paginator },
     { provide: AbstractStorage, useClass: StorageService },
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },

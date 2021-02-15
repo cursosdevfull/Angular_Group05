@@ -44,6 +44,5 @@ export class PageLoginComponent implements OnInit {
   enter() {
     const user: UserEntity = this.group.value;
     this.authService.login(user);
-    this.router.navigate(['/dashboard']);
   }
 }

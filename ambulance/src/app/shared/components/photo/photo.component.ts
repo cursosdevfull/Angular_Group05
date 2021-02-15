@@ -9,6 +9,7 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { WebcamImage } from 'ngx-webcam';
 import { Observable, Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'amb-photo',
@@ -79,7 +80,7 @@ export class PhotoComponent implements OnInit, ControlValueAccessor {
 
   ngAfterViewInit() {
     if (this.photoByDefault) {
-      const pathPhoto = '/assets/img/' + this.photoByDefault;
+      const pathPhoto = `${environment.pathAPI}/photos/` + this.photoByDefault;
       this.loadPhoto(pathPhoto);
     }
   }

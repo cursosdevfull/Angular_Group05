@@ -8,6 +8,7 @@ import mocksMedics from '../../../mocks/medics.json';
 import mocksMedicMetaDataColumn from '../../../mocks/medic-metadatacolumn.json';
 import { ConfigService } from 'src/app/config/config.service';
 import { MatDialogRef } from '@angular/material/dialog';
+import { mapping } from 'src/app/medics/application/medic.dto';
 @Component({
   selector: 'amb-page-medics',
   templateUrl: './page-medics.component.html',
@@ -17,6 +18,7 @@ export class PageMedicsComponent implements OnInit {
   metaDataColumns: IMetaDataColumn[] = mocksMedicMetaDataColumn;
   data: MedicEntity[] = [];
   totalRecords = 0;
+  currentPage = 0;
 
   constructor(
     private readonly medicUseCase: MedicUseCase,
@@ -40,11 +42,11 @@ export class PageMedicsComponent implements OnInit {
   }
 
   list(page: number) {
-    // this.medicUseCase.getByPage(page).subscribe(console.log);
-
-    this.totalRecords = mocksMedics.length;
-    this.data = mocksMedics.slice(page * 4, page * 4 + 4);
-    this.medicUseCase.getAll().subscribe(console.log, console.log);
+    this.currentPage = page;
+    this.medicUseCase.getByPage(page).subscribe((response: any) => {
+      this.data = response.records;
+      this.totalRecords = response.totalRecords;
+    });
   }
 
   openForm(row: MedicEntity | any = null) {
@@ -59,13 +61,34 @@ export class PageMedicsComponent implements OnInit {
         return;
       }
 
-      if (!response.id) {
-        this.medicUseCase.insert(response).subscribe(console.log);
+      if (!row) {
+        this.medicUseCase
+          .insert(response)
+          .subscribe(() => this.list(this.currentPage));
+      } else {
+        this.medicUseCase
+          .update(row.id, response)
+          .subscribe(() => this.list(this.currentPage));
       }
     });
   }
 
   changePage(page: number) {
     this.list(page);
+  }
+
+  delete(row: MedicEntity) {
+    this.utils
+      .confirm()
+      .afterClosed()
+      .subscribe((response: any) => {
+        if (!response) {
+          return;
+        }
+
+        this.medicUseCase
+          .delete(+row.id)
+          .subscribe(() => this.list(this.currentPage));
+      });
   }
 }

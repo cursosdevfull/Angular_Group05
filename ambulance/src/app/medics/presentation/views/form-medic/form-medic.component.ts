@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MedicEntity } from 'src/app/medics/domain/medic.entity';
 import { CustomValidators } from 'src/app/shared/utils/custom-validators';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'amb-form-medic',
@@ -62,6 +63,17 @@ export class FormMedicComponent implements OnInit {
     });
 
     if (this.data) {
+      const url = `${environment.pathAPI}/photos/${this.data.photo}`;
+      const fileName = 'prueba.jpg';
+
+      fetch(url).then(async (response) => {
+        const contentType = response.headers.get('content-type');
+        const blob = await response.blob();
+        const file = new File([blob], fileName);
+        console.log('file', file);
+        this.group.patchValue({ photo: file });
+      });
+
       this.group.addControl('photo', new FormControl(null));
       this.photoToShow = this.data.photo;
     } else {
@@ -75,11 +87,23 @@ export class FormMedicComponent implements OnInit {
   save() {
     if (this.group.valid) {
       const medic = this.group.value;
-      this.reference.close(medic);
+      const fd: FormData = new FormData();
+
+      fd.append('nombre', medic.name);
+      fd.append('segundo_nombre', medic.surname);
+      fd.append('apellido', medic.lastname);
+      fd.append('cmp', medic.cmp);
+      fd.append('dni', medic.dni);
+      fd.append('correo', medic.email);
+      fd.append('foto', medic.photo);
+
+      /*       for (const key in medic) {
+        fd.append(key, medic[key]);
+      } */
+      this.reference.close(fd);
     } else {
       console.log('formulario no válido');
     }
-    //console.log(this.group);
   }
 
   ngOnInit(): void {}

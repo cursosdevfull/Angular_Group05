@@ -19,18 +19,17 @@ export class MedicOperation extends MedicOperationRepository {
     super();
   }
 
-  insert(medic: MedicEntity): Observable<MedicEntity> {
-    const headers = new HttpHeaders({
-      authorization:
-        'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MTAyOTc1MzgsImV4cCI6MTYxMDI5OTMzOCwiX2lkIjoiNWY2YTdkM2MyMmJiMzk0NTQ0Y2MwOGI5Iiwicm9sZXMiOlt7InJvbGVOYW1lIjoiQURNSU5JU1RSQVRPUiJ9LHsicm9sZU5hbWUiOiJNRURJQyJ9XX0.9QlmA4IEy3xEvN_Tgpf5O81lecG_5BSeh9bsQTb3m5I',
-    });
-    return this.http.post<MedicEntity>(`${environment.pathAPI}/medics/`, medic);
+  insert(fd: FormData): Observable<MedicEntity> {
+    return this.http.post<MedicEntity>(`${environment.pathAPI}/medics/`, fd);
   }
-  update(id: string, medic: MedicEntity): Observable<MedicEntity> {
-    throw new Error('Method not implemented.');
+  update(id: string, fd: FormData): Observable<MedicEntity> {
+    return this.http.put<MedicEntity>(
+      `${environment.pathAPI}/medics/${id}`,
+      fd
+    );
   }
-  delete(id: string): Observable<MedicEntity> {
-    throw new Error('Method not implemented.');
+  delete(id: number): Observable<MedicEntity> {
+    return this.http.delete<MedicEntity>(`${environment.pathAPI}/medics/${id}`);
   }
   getAll(): Observable<MedicEntity[]> {
     return this.http.get<MedicEntity[]>(`${environment.pathAPI}/medics`);

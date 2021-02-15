@@ -9,10 +9,10 @@ import { ConfigService } from 'src/app/config/config.service';
 })
 export class PageLockScreenComponent implements OnInit {
   constructor(
-    private readonly configService: ConfigService,
+    // private readonly configService: ConfigService,
     private readonly router: Router
   ) {
-    this.configService.config = {
+    /*     this.configService.config = {
       layout: {
         menu: {
           hidden: true,
@@ -21,7 +21,7 @@ export class PageLockScreenComponent implements OnInit {
           hidden: true,
         },
       },
-    };
+    }; */
   }
 
   ngOnInit(): void {}

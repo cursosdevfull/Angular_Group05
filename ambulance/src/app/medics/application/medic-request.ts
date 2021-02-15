@@ -7,4 +7,5 @@ export interface MedicRequest {
   dni: string;
   correo: string;
   activo: boolean;
+  foto: string;
 }

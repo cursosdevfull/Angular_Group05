@@ -19,6 +19,8 @@ import { UploadDirective } from './directives/upload.directive';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { WebcamModule } from 'ngx-webcam';
+import { RolesAllowedDirective } from './directives/roles-allowed.directive';
+import { ConfirmComponent } from './components/confirm/confirm.component';
 @NgModule({
   declarations: [
     TitleComponent,
@@ -26,8 +28,11 @@ import { WebcamModule } from 'ngx-webcam';
     TableComponent,
     PhotoComponent,
     UploadDirective,
+    RolesAllowedDirective,
+    ConfirmComponent,
   ],
   imports: [
+    MatButtonModule,
     CommonModule,
     MatToolbarModule,
     MatIconModule,
@@ -55,6 +60,7 @@ import { WebcamModule } from 'ngx-webcam';
     MatInputModule,
     MatPaginatorModule,
     PhotoComponent,
+    RolesAllowedDirective,
   ],
 })
 export class SharedModule {}

@@ -1,6 +1,6 @@
 <amb-title></amb-title>
 <amb-container-list>
-  <div class="fixed">
+  <div class="fixed" *rolesAllowed="['ADMIN']">
     <button mat-fab color="primary" (click)="openForm()">
       <mat-icon>add</mat-icon>
     </button>
@@ -22,7 +22,7 @@
         >
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-button color="accent" matTooltip="ELIMINAR">
+        <button mat-button color="accent" matTooltip="ELIMINAR" (click)="delete(row)">
           <mat-icon>delete</mat-icon>
         </button>
       </td>
