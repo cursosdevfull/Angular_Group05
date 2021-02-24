@@ -18,6 +18,8 @@ import { AbstractStorage } from './shared/services/abstract-storage';
 import { StorageService } from './shared/services/storage.service';
 import { TokenInterceptor } from './shared/services/token.interceptor';
 import { AuthenticationGuard } from './shared/guards/authentication.guard';
+import { ExportService } from './shared/services/export.service';
+import { ExportRepository } from './shared/infraestructure/export.repository';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, ItemComponent],
@@ -34,6 +36,7 @@ import { AuthenticationGuard } from './shared/guards/authentication.guard';
     AuthenticationGuard,
     { provide: MatPaginatorIntl, useClass: Paginator },
     { provide: AbstractStorage, useClass: StorageService },
+    { provide: ExportRepository, useClass: ExportService },
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],

@@ -17,10 +17,14 @@ import { MatInputModule } from '@angular/material/input';
 import { PhotoComponent } from './components/photo/photo.component';
 import { UploadDirective } from './directives/upload.directive';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { WebcamModule } from 'ngx-webcam';
 import { RolesAllowedDirective } from './directives/roles-allowed.directive';
 import { ConfirmComponent } from './components/confirm/confirm.component';
+import { ExportComponent } from './components/export/export.component';
+import { MatListModule } from '@angular/material/list';
+import { ExportUseCase } from './application/export.usecase';
 @NgModule({
   declarations: [
     TitleComponent,
@@ -30,6 +34,7 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
     UploadDirective,
     RolesAllowedDirective,
     ConfirmComponent,
+    ExportComponent,
   ],
   imports: [
     MatButtonModule,
@@ -43,6 +48,8 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
     MatSlideToggleModule,
     MatPaginatorModule,
     WebcamModule,
+    MatBottomSheetModule,
+    MatListModule,
   ],
   exports: [
     MatSidenavModule,
@@ -61,6 +68,10 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
     MatPaginatorModule,
     PhotoComponent,
     RolesAllowedDirective,
+    ExportComponent,
+    MatBottomSheetModule,
+    MatListModule,
   ],
+  providers: [ExportUseCase],
 })
 export class SharedModule {}

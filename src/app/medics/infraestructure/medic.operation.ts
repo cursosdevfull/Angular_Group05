@@ -38,15 +38,8 @@ export class MedicOperation extends MedicOperationRepository {
     throw new Error('Method not implemented.');
   }
   getByPage(page: number): Observable<any> {
-    /*     const accessToken = this.storage.get('accessToken');
-    const headers = new HttpHeaders({
-      authorization: `Bearer ${accessToken}`,
-    }); */
     return this.http
-      .get(
-        `${environment.pathAPI}/medics/page/${page}/${environment.pageSize}`
-        /*  { headers } */
-      )
+      .get(`${environment.pathAPI}/medics/page/${page}/${environment.pageSize}`)
       .pipe(
         map((data: any) => ({
           records: mapping(data.records),
