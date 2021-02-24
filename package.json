@@ -27,8 +27,10 @@
     "jwt-decode": "^3.1.2",
     "lodash": "^4.17.20",
     "ngx-webcam": "^0.3.2",
+    "pdfmake": "^0.1.68",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "xlsx": "^0.16.9",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
@@ -38,6 +40,7 @@
     "@types/jasmine": "~3.6.0",
     "@types/lodash": "^4.14.168",
     "@types/node": "^12.11.1",
+    "@types/pdfmake": "^0.1.16",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",

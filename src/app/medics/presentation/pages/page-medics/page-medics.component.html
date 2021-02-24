@@ -1,6 +1,15 @@
 <amb-title></amb-title>
 <amb-container-list>
-  <div class="fixed" *rolesAllowed="['ADMIN']">
+  <div
+    class="fixed"
+    *rolesAllowed="['ADMIN']"
+    fxLayout
+    fxLayoutGap="5px"
+    fxLayoutAlign="end center"
+  >
+    <button mat-fab color="accent" (click)="openExport()">
+      <mat-icon>cloud_download</mat-icon>
+    </button>
     <button mat-fab color="primary" (click)="openForm()">
       <mat-icon>add</mat-icon>
     </button>
@@ -22,7 +31,12 @@
         >
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-button color="accent" matTooltip="ELIMINAR" (click)="delete(row)">
+        <button
+          mat-button
+          color="accent"
+          matTooltip="ELIMINAR"
+          (click)="delete(row)"
+        >
           <mat-icon>delete</mat-icon>
         </button>
       </td>

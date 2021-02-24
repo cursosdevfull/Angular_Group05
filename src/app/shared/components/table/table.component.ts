@@ -14,6 +14,7 @@ import {
   MatTable,
   MatTableDataSource,
 } from '@angular/material/table';
+import { environment } from 'src/environments/environment';
 import { IMetaDataColumn } from '../../interfaces/metadatacolumn.interface';
 
 @Component({
@@ -35,11 +36,14 @@ export class TableComponent implements OnInit {
   dataSource: any = [];
   listFields: string[] = [];
 
+  pageSize = 0;
+
   constructor() {}
 
   ngOnInit(): void {
     this.listFields = this.metaDataColumns.map((el) => el.field);
     this.loadData();
+    this.pageSize = environment.pageSize;
   }
 
   ngOnChanges() {
