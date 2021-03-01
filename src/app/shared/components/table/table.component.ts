@@ -9,6 +9,7 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import {
   MatColumnDef,
   MatTable,
@@ -28,13 +29,16 @@ export class TableComponent implements OnInit {
   @Input() metaDataColumns: IMetaDataColumn[] = [];
   @Input() total: number = 0;
   @Output() onChangePage: EventEmitter<number> = new EventEmitter<number>();
+  @Output() onFilter: EventEmitter<string> = new EventEmitter<string>();
   @ViewChild(MatTable, { static: true }) table: MatTable<any> | undefined;
   @ContentChildren(MatColumnDef, { descendants: true }) columnsDef:
     | QueryList<MatColumnDef>
     | undefined;
 
-  dataSource: any = [];
+  dataSource: any;
   listFields: string[] = [];
+
+  fcTextToSearch = new FormControl('');
 
   pageSize = 0;
 
@@ -48,6 +52,11 @@ export class TableComponent implements OnInit {
 
   ngOnChanges() {
     this.loadData();
+  }
+
+  applyFilter() {
+    const filter = this.fcTextToSearch.value.trim();
+    this.onFilter.emit(filter);
   }
 
   loadData() {

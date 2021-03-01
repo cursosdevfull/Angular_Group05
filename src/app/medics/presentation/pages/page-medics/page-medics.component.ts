@@ -44,9 +44,9 @@ export class PageMedicsComponent implements OnInit {
     this.list(0);
   }
 
-  list(page: number) {
+  list(page: number, text: string = '') {
     this.currentPage = page;
-    this.medicUseCase.getByPage(page).subscribe((response: any) => {
+    this.medicUseCase.getByPage(page, text).subscribe((response: any) => {
       this.data = response.records;
       this.totalRecords = response.totalRecords;
     });
@@ -84,6 +84,10 @@ export class PageMedicsComponent implements OnInit {
 
   changePage(page: number) {
     this.list(page);
+  }
+
+  applyFilter(text: string) {
+    this.list(0, text);
   }
 
   delete(row: MedicEntity) {

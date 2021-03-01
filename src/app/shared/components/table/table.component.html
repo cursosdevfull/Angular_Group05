@@ -1,5 +1,22 @@
 <div fxLayout="column" class="container-table">
   <ng-content></ng-content>
+  <div fxLayout fxLayoutAlign="start center" style="z-index: 9999999">
+    <div fxFlex="1 1 30%">
+      <mat-form-field appearance="outline">
+        <input
+          type="text"
+          matInput
+          placeholder="Ingrese el nombre a buscar"
+          [formControl]="fcTextToSearch"
+        />
+      </mat-form-field>
+    </div>
+    <div fxFlex="1 1 30%">
+      <button mat-raised-button color="primary" (click)="applyFilter()">
+        Buscar
+      </button>
+    </div>
+  </div>
   <table mat-table [dataSource]="dataSource">
     <ng-container *ngFor="let md of metaDataColumns" [matColumnDef]="md.field">
       <th mat-header-cell *matHeaderCellDef>{{ md.title }}</th>

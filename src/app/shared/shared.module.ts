@@ -25,6 +25,7 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
 import { ExportComponent } from './components/export/export.component';
 import { MatListModule } from '@angular/material/list';
 import { ExportUseCase } from './application/export.usecase';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     TitleComponent,
@@ -50,6 +51,9 @@ import { ExportUseCase } from './application/export.usecase';
     WebcamModule,
     MatBottomSheetModule,
     MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
   ],
   exports: [
     MatSidenavModule,

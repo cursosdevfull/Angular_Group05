@@ -19,6 +19,7 @@
     [data]="data"
     [total]="totalRecords"
     (onChangePage)="changePage($event)"
+    (onFilter)="applyFilter($event)"
   >
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef></th>

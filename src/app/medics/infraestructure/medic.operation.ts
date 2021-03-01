@@ -37,9 +37,11 @@ export class MedicOperation extends MedicOperationRepository {
   getOne(id: string): Observable<MedicEntity> {
     throw new Error('Method not implemented.');
   }
-  getByPage(page: number): Observable<any> {
+  getByPage(page: number, text: string): Observable<any> {
     return this.http
-      .get(`${environment.pathAPI}/medics/page/${page}/${environment.pageSize}`)
+      .get(
+        `${environment.pathAPI}/medics/page/${page}/${environment.pageSize}?filter=${text}`
+      )
       .pipe(
         map((data: any) => ({
           records: mapping(data.records),
@@ -47,5 +49,10 @@ export class MedicOperation extends MedicOperationRepository {
         })),
         take(1)
       );
+  }
+
+  readJson(path: string) {
+    // path = assets/apis/paths.json
+    this.http.get(path).subscribe((data) => console.log(data));
   }
 }
